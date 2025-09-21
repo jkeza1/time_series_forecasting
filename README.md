@@ -1,10 +1,12 @@
 ## Beijing Air Quality Forecasting
 Time series forecasting of PM2.5 concentrations using advanced LSTM neural networks. This project tackles the critical challenge of predicting air pollution by leveraging deep learning to model complex temporal and meteorological patterns.
 
-## Project Status
+# Project Status
 
 Current Score: 19,568.4 RMSE
+
 Target Score: < 3,000 RMSE
+
 Status: 🚧 Under Active Optimization
 
  ## Project Overview
@@ -20,7 +22,7 @@ Input(shape=(72, 45))
 → Dense(16, activation='relu')
 → Dense(1)
 
-&bull;: Adam
+&bull; Adam
 
 &bull; Loss Function: Mean Squared Error (MSE)
 
