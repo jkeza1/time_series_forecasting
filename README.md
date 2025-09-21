@@ -41,7 +41,7 @@ Input(shape=(72, 45))
 
 # Core Technologies
 
-" Python 3.8+ · TensorFlow 2.x · Keras · Scikit-learn · Pandas · NumPy "
+**Python 3.8+ · TensorFlow 2.x · Keras · Scikit-learn · Pandas · NumPy**
 
 # Key Features
 
