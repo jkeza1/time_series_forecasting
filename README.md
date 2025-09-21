@@ -84,15 +84,16 @@ Missing values were imputed using a 24-hour rolling median to maintain temporal 
 
 
 # Example: Cyclical encoding
-
-``` df['hour_sin'] = np.sin(2 * np.pi * df['hour'] / 24)
+```
+df['hour_sin'] = np.sin(2 * np.pi * df['hour'] / 24)
 ```
 ```
 df['hour_cos'] = np.cos(2 * np.pi * df['hour'] / 24)
 ```
 
 # Load data
-```train = pd.read_csv('data/train.csv')
+```
+train = pd.read_csv('data/train.csv')
 ```
 ```
 test = pd.read_csv('data/test.csv')
