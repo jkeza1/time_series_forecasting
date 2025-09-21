@@ -5,6 +5,7 @@ Target Score: < 3,000 RMSE
 Progress: 🚧 Under Optimization
 
 ** Key Objectives
+
 ✅ Feature Engineering: 45+ engineered features
 
 ✅ Model Architecture: Bidirectional LSTM implementation
@@ -76,14 +77,14 @@ Metric	Current	Target	Improvement Needed
 RMSE	19,568	< 3,000	85%
 Training Stability	NaN issues	Stable	Critical
 Validation Gap	TBD	< 100	TBD
-🔄 Current Focus Areas
-🐛 Bug Fixes
+# 🔄 Current Focus Areas
+1.Bug Fixes
 
 NaN values in training sequences
 
 Gradient instability issues
 
-⚡ Performance Optimization
+2.⚡ Performance Optimization
 
 Learning rate scheduling
 
@@ -91,7 +92,7 @@ Gradient clipping
 
 Advanced regularization
 
-📊 Feature Optimization
+3. Feature Optimization
 
 Feature importance analysis
 
@@ -99,27 +100,27 @@ Dimensionality reduction
 
 Cross-validation strategies
 
-🌍 Environmental Impact
+#  Environmental Impact
 This project aims to contribute to:
 
-🏙️ Better urban air quality management
+1.Better urban air quality management
 
-🏥 Improved public health warnings
+2. Improved public health warnings
 
-📋 Data-driven environmental policy
+3. Data-driven environmental policy
 
-🌱 Sustainable city planning
+4. Sustainable city planning
 
-🤝 Contributing
+#  Contributing
 We welcome contributions! Areas of interest:
 
-Model architecture improvements
+-Model architecture improvements
 
-Feature engineering ideas
+-Feature engineering ideas
 
-Hyperparameter optimization
+-Hyperparameter optimization
 
-Data visualization
+# Data visualization
 
-📝 License
+# License
 This project is open source and available under the MIT License.
