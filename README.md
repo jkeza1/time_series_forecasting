@@ -102,31 +102,31 @@ Cross-validation
 🌍 Impact
 This project supports:
 
-🏙️ Urban air quality management
+&middot; Urban air quality management
 
-🏥 Public health warnings
+&middot; Public health warnings
 
-📋 Environmental policy
+&middot; Environmental policy
 
-🌱 Sustainable planning
+&middot; Sustainable planning
 
-🤝 Contributing
+## Contributing
 We welcome contributions in:
 
-Model architecture
+&bull;Model architecture
 
-Feature engineering
+&bull;Feature engineering
 
-Hyperparameter optimization
+&bull;Hyperparameter optimization
 
 ## Future Work & Environmental Impact
 This model provides a strong foundation for tools that can:
 
 &bull; Offer earlier public health warnings during pollution events.
 
-Evaluate the potential effectiveness of emission control policies through simulation.
+&bull; Evaluate the potential effectiveness of emission control policies through simulation.
 
-Be extended into a spatial-temporal model by incorporating data from neighboring cities.
+&bull; It can be extended into a spatial-temporal model by incorporating data from neighboring cities.
 
-📝 License
+# License
 MIT License - see LICENSE file for details
