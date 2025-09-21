@@ -1,82 +1,125 @@
-# time_series_forecasting
+## Beijing Air Quality Forecasting
+# Project Status
+Current Score: 19,568.4 RMSE
+Target Score: < 3,000 RMSE
+Progress: 🚧 Under Optimization
 
-📋 Project Overview
-Predict PM2.5 concentrations in Beijing using meteorological data and advanced deep learning. This project addresses air quality forecasting to support public health and environmental management.
+** Key Objectives
+✅ Feature Engineering: 45+ engineered features
 
-⚠️ Current Status
-Model Performance: Needs significant improvement
-Kaggle Score: 19,568.4 (target: <3,000)
-Key Challenge: Model producing NaN predictions during training
+✅ Model Architecture: Bidirectional LSTM implementation
 
-🎯 Immediate Focus Areas
-Critical Issues to Address:
-NaN Predictions: Model outputs NaN values during training
+⚡ Performance Optimization: Ongoing improvements
 
-Data Quality: Input sequences contain NaN values that need cleaning
+🎯 Target Achievement: Working towards sub-3000 RMSE
 
-Feature Validation: Verify all 45 features are properly scaled and formatted
-
-Model Stability: Address numerical instability in training
-
-🏗️ Technical Approach
-Feature Engineering (45 Features)
-Cyclical time encoding (hour, day, month)
-
-Meteorological interactions (temp-dew point, wind-pressure)
-
-Rolling statistics (6, 12, 24-hour windows)
-
-Lag features and weather variable transformations
-
-Current Architecture
+🏗️ Technical Stack
 python
-Bidirectional LSTM Sequence:
-Input(36h, 45 features) → BiLSTM(128) → BiLSTM(64) → LSTM(32) → Dense(64→32→1)
-🔧 Required Improvements
-1. Data Cleaning
+# Core Technologies
+Python 3.8+ · TensorFlow 2.x · Keras · Scikit-learn · Pandas · NumPy
+
+# Key Features
+Bidirectional LSTMs · Advanced Feature Engineering · Time Series Analysis
+📈 Model Architecture
+
+
+
+
+
+
+
+
+
+🔧 Feature Engineering Highlights
+🕐 Temporal Features
+⏰ Cyclical time encoding (hour, day, month)
+
+📅 Seasonal indicators and weekend flags
+
+🔁 Fourier transformations for periodicity
+
+🌡️ Meteorological Features
+🌡️ Temperature-dew point differentials
+
+💨 Wind-pressure interactions
+
+📊 Rolling statistics (6, 12, 24, 48h windows)
+
+📈 Lag features (1-48 hour intervals)
+
+🎯 Advanced Transformations
 python
-# Current issue: X_train_seq contains NaN values
-print(f"NaN values in training data: {np.isnan(X_train_seq).any()}")
-# → Returns True, needs immediate fixing
-2. Model Stability
-Implement gradient clipping
+# Cyclical encoding example
+df['hour_sin'] = np.sin(2 * np.pi * df['hour'] / 24)
+df['hour_cos'] = np.cos(2 * np.pi * df['hour'] / 24)
+📊 Dataset Overview
+Dataset	Samples	Time Period	Features
+Training	30,676	2010-2013	45
+Testing	13,148	2013-2014	45
+🚀 Quick Start
+Prerequisites
+bash
+pip install tensorflow scikit-learn pandas numpy matplotlib
+Basic Usage
+python
+# Load and preprocess data
+from src.data_processing import load_and_clean_data
+from src.feature_engineering import create_advanced_features
 
-Adjust learning rate (currently 0.001)
+# Build and train model  
+from src.models import create_bidirectional_lstm
 
-Add more aggressive regularization
+model = create_bidirectional_lstm(sequence_length=36, n_features=45)
+model.fit(X_train, y_train, validation_split=0.15, epochs=50)
+🎯 Performance Targets
+Metric	Current	Target	Improvement Needed
+RMSE	19,568	< 3,000	85%
+Training Stability	NaN issues	Stable	Critical
+Validation Gap	TBD	< 100	TBD
+🔄 Current Focus Areas
+🐛 Bug Fixes
 
-Use simpler architecture initially
+NaN values in training sequences
 
-3. Validation Strategy
-Implement time-series cross-validation
+Gradient instability issues
 
-Add better monitoring callbacks
+⚡ Performance Optimization
 
-Track training/validation divergence
+Learning rate scheduling
 
-🚧 Next Steps
-Fix NaN Data: Clean input sequences before training
+Gradient clipping
 
-Simplify Model: Start with basic LSTM, then increase complexity
+Advanced regularization
 
-Hyperparameter Tuning: Systematic learning rate and batch size optimization
+📊 Feature Optimization
 
-Feature Selection: Identify most predictive features from the 45
+Feature importance analysis
 
-Advanced Regularization: Add dropout, batch normalization, weight decay
+Dimensionality reduction
 
-📊 Current Baseline
-Initial Score: 19,568.4 (needs ~85% improvement)
+Cross-validation strategies
 
-Target Score: <3,000
+🌍 Environmental Impact
+This project aims to contribute to:
 
-Primary Issue: Training instability leading to NaN predictions
+🏙️ Better urban air quality management
 
-🎯 Success Metrics
-Achieve RMSE < 3,000 on Kaggle leaderboard
+🏥 Improved public health warnings
 
-Stable training without NaN values
+📋 Data-driven environmental policy
 
-Consistent validation performance
+🌱 Sustainable city planning
 
-Meaningful feature importance rankings
+🤝 Contributing
+We welcome contributions! Areas of interest:
+
+Model architecture improvements
+
+Feature engineering ideas
+
+Hyperparameter optimization
+
+Data visualization
+
+📝 License
+This project is open source and available under the MIT License.
