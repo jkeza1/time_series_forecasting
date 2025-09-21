@@ -11,7 +11,7 @@ Status: 🚧 Under Active Optimization
 Air pollution, particularly PM2.5, is a significant public health concern in urban environments like Beijing. This project involves building a robust forecasting system using historical air quality and weather data. The model is designed to understand the underlying environmental dynamics, including local emissions, regional pollution transport, and meteorological conditions
 
 # Model Architecture:
-The best performing model is a stacked LSTM designed to hierarchically learn patterns from short-term to long-term dependencies.
+The best performing model is a stacked LSTM designed to learn patterns from short-term to long-term dependencies hierarchically.
 
 Input(shape=(72, 45))
 → LSTM(128, return_sequences=True)
@@ -75,7 +75,7 @@ Missing values were imputed using a 24-hour rolling median to maintain temporal 
 
 &bull; Wind-pressure interactions
 
-&bull;Rolling statistics (6, 12, 24, 48h windows)
+&bull; Rolling statistics (6, 12, 24, 48h windows)
 
 &bull; Lag features (1-48 hour intervals)
 
@@ -83,55 +83,46 @@ python
 # Example: Cyclical encoding
 df['hour_sin'] = np.sin(2 * np.pi * df['hour'] / 24)
 df['hour_cos'] = np.cos(2 * np.pi * df['hour'] / 24)
-📊 Dataset
-Dataset	Samples	Time Period	Features
-Training	30,676	2010-2013	45
-Testing	13,148	2013-2014	45
-🚀 Quick Start
-Installation
-bash
-pip install tensorflow scikit-learn pandas numpy matplotlib
-Basic Usage
-python
-import pandas as pd
-from models import create_bidirectional_lstm
 
+🚀 Quick Start
 # Load data
 train = pd.read_csv('data/train.csv')
 test = pd.read_csv('data/test.csv')
 
 # Train model
 model = create_bidirectional_lstm(sequence_length=36, n_features=45)
+
 history = model.fit(X_train, y_train, validation_split=0.15, epochs=50)
-📈 Performance Tracking
-Metric	Current	Target	Improvement Needed
+
+# Performance Tracking
+&middot; Metric	Current	Target	Improvement Needed
 RMSE	19,568	< 3,000	85%
-Training Stability	NaN issues	Stable	Critical
-Validation Gap	TBD	< 100	TBD
-🔧 Current Focus
-🐛 Bug Fixes
 
-NaN values in training sequences
+&middot; Training Stability	NaN issues	Stable	Critical
 
-Gradient instability issues
+# Validation Gap	TBD	< 100	TBD
+&middot; Current Focus
+&middot; Bug Fixes
+&middot; NaN values in training sequences
+&middot; Gradient instability issues
 
-⚡ Optimization
+# Optimization
 
-Learning rate scheduling
+&bull; Learning rate scheduling
 
-Gradient clipping
+&bull;Gradient clipping
 
-Advanced regularization
+&bull; Advanced regularization
 
-📊 Feature Analysis
+# Feature Analysis
 
-Feature importance
+&bull; Feature importance
 
-Dimensionality reduction
+&bull ;Dimensionality reduction
 
-Cross-validation
+&bull; Cross-validation
 
-🌍 Impact
+# Impact
 This project supports:
 
 &middot; Urban air quality management
