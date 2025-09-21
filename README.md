@@ -66,6 +66,7 @@ Missing values were imputed using a 24-hour rolling median to maintain temporal 
 
 ## Feature Engineering
 &bull;Temporal Features
+
 &bull; Cyclical time encoding (hour, day, month)
 
 &bull; Seasonal indicators and weekend flags
