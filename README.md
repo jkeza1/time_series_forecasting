@@ -1,37 +1,36 @@
 ## Beijing Air Quality Forecasting
-# Project Status
+Time series forecasting of PM2.5 concentrations using advanced LSTM neural networks.
+
+## Project Status
 Current Score: 19,568.4 RMSE
 Target Score: < 3,000 RMSE
-Progress: 🚧 Under Optimization
+Status: 🚧 Under Active Optimization
 
-** Key Objectives
+# Key Objectives
+* Feature Engineering: 45+ engineered features
 
-✅ Feature Engineering: 45+ engineered features
+* Model Architecture: Bidirectional LSTM implementation
 
-✅ Model Architecture: Bidirectional LSTM implementation
+* Performance Optimization: Ongoing improvements
 
-⚡ Performance Optimization: Ongoing improvements
+* Target Achievement: Working towards sub-3000 RMSE
 
-🎯 Target Achievement: Working towards sub-3000 RMSE
+# Technical Stack
 
-🏗️ Technical Stack
-python
 # Core Technologies
-Python 3.8+ · TensorFlow 2.x · Keras · Scikit-learn · Pandas · NumPy
+
+" Python 3.8+ · TensorFlow 2.x · Keras · Scikit-learn · Pandas · NumPy "
 
 # Key Features
 Bidirectional LSTMs · Advanced Feature Engineering · Time Series Analysis
-📈 Model Architecture
+" Python 3.8+ · TensorFlow 2.x · Keras · Scikit-learn · Pandas · NumPy " 
 
+# Key Features
+Bidirectional LSTMs · Advanced Feature Engineering · Time Series Analysis
+🏗️ Model Architecture
+Bidirectional LSTM with multiple layers, batch normalization, and dropout regularization
 
-
-
-
-
-
-
-
-🔧 Feature Engineering Highlights
+🔧 Feature Engineering
 🕐 Temporal Features
 ⏰ Cyclical time encoding (hour, day, month)
 
@@ -48,43 +47,43 @@ Bidirectional LSTMs · Advanced Feature Engineering · Time Series Analysis
 
 📈 Lag features (1-48 hour intervals)
 
-🎯 Advanced Transformations
 python
-# Cyclical encoding example
+# Example: Cyclical encoding
 df['hour_sin'] = np.sin(2 * np.pi * df['hour'] / 24)
 df['hour_cos'] = np.cos(2 * np.pi * df['hour'] / 24)
-📊 Dataset Overview
+📊 Dataset
 Dataset	Samples	Time Period	Features
 Training	30,676	2010-2013	45
 Testing	13,148	2013-2014	45
 🚀 Quick Start
-Prerequisites
+Installation
 bash
 pip install tensorflow scikit-learn pandas numpy matplotlib
 Basic Usage
 python
-# Load and preprocess data
-from src.data_processing import load_and_clean_data
-from src.feature_engineering import create_advanced_features
+import pandas as pd
+from models import create_bidirectional_lstm
 
-# Build and train model  
-from src.models import create_bidirectional_lstm
+# Load data
+train = pd.read_csv('data/train.csv')
+test = pd.read_csv('data/test.csv')
 
+# Train model
 model = create_bidirectional_lstm(sequence_length=36, n_features=45)
-model.fit(X_train, y_train, validation_split=0.15, epochs=50)
-🎯 Performance Targets
+history = model.fit(X_train, y_train, validation_split=0.15, epochs=50)
+📈 Performance Tracking
 Metric	Current	Target	Improvement Needed
 RMSE	19,568	< 3,000	85%
 Training Stability	NaN issues	Stable	Critical
 Validation Gap	TBD	< 100	TBD
-# 🔄 Current Focus Areas
-1.Bug Fixes
+🔧 Current Focus
+🐛 Bug Fixes
 
 NaN values in training sequences
 
 Gradient instability issues
 
-2.⚡ Performance Optimization
+⚡ Optimization
 
 Learning rate scheduling
 
@@ -92,35 +91,42 @@ Gradient clipping
 
 Advanced regularization
 
-3. Feature Optimization
+📊 Feature Analysis
 
-Feature importance analysis
+Feature importance
 
 Dimensionality reduction
 
-Cross-validation strategies
+Cross-validation
 
-#  Environmental Impact
-This project aims to contribute to:
+🌍 Impact
+This project supports:
 
-1.Better urban air quality management
+🏙️ Urban air quality management
 
-2. Improved public health warnings
+🏥 Public health warnings
 
-3. Data-driven environmental policy
+📋 Environmental policy
 
-4. Sustainable city planning
+🌱 Sustainable planning
 
-#  Contributing
-We welcome contributions! Areas of interest:
+🤝 Contributing
+We welcome contributions in:
 
--Model architecture improvements
+Model architecture
 
--Feature engineering ideas
+Feature engineering
 
--Hyperparameter optimization
+Hyperparameter optimization
 
-# Data visualization
+## Future Work & Environmental Impact
+This model provides a strong foundation for tools that can:
 
-# License
-This project is open source and available under the MIT License.
+&bull; Offer earlier public health warnings during pollution events.
+
+Evaluate the potential effectiveness of emission control policies through simulation.
+
+Be extended into a spatial-temporal model by incorporating data from neighboring cities.
+
+📝 License
+MIT License - see LICENSE file for details
